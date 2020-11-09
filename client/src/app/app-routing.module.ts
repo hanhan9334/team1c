@@ -6,11 +6,11 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { SurveyComponent } from './pages/survey/survey.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'landing', component: LandingComponent},
-  {path: 'survey', component: SurveyComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: 'home', component: HomeComponent, data: {title: 'Home'}},
+  {path: 'about', component: AboutComponent, data: {title: 'About'}},
+  {path: 'landing', component: LandingComponent, data: {title: 'Welcome'}},
+  {path: 'survey', component: SurveyComponent, data: {title: 'Survey'}},
+  {path: '', redirectTo: '/landing', pathMatch: 'full', data: {title: 'Welcome'}}
 
 ];
 
