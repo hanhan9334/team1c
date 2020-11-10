@@ -1,1 +1,1 @@
-# Welcome to Team One Cent's Fall 2020 project.
+# This is the database branch
