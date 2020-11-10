@@ -26,7 +26,7 @@ export class SurveyRepository
         return this.surveys.find(s => s._id === id);
     }
 
-    get Names(): string[]
+    getNames(): string[]
     {
         return this.names;
     }

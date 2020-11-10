@@ -4,12 +4,14 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { SurveyComponent } from './pages/survey/survey.component';
+import { SurveyListComponent } from './survey-list/survey-list.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Home'}},
   {path: 'about', component: AboutComponent, data: {title: 'About'}},
   {path: 'landing', component: LandingComponent, data: {title: 'Welcome'}},
   {path: 'survey', component: SurveyComponent, data: {title: 'Survey'}},
+  {path: 'survey-list', component: SurveyListComponent, data: {title: 'Survey List'}},
   {path: '', redirectTo: '/landing', pathMatch: 'full', data: {title: 'Welcome'}}
 
 ];
