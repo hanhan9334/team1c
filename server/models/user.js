@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
         unique: true
 
     },
+    phoneNum:{
+        type:String,
+        required:[true,'Please enter a phone number']
+    },
     email: {
         type: String,
         required: [true, 'Please enter an email.'],
@@ -32,7 +36,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
-    const token = jwt.sign({ _id: user._id.toString() }, 'comp229', {
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.TOKEN_SECRET, {
         expiresIn: '24h'
     });
 
