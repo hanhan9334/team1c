@@ -8,15 +8,19 @@ import { SurveyRepository } from './../model/survey.repository';
 })
 export class SurveyListComponent 
 {
+  public selectedName = null;
 
   constructor(private repository: SurveyRepository) { }
 
   get surveys(): Survey[]
   {
-    return this.repository.getSurveys();
+    return this.repository.getSurveys(this.selectedName);
   }
   get names(): string[]
   {
     return this.repository.getNames();
+  }
+  changeName(newName?: string): void{
+    this.selectedName = newName;
   }
 }

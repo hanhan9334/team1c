@@ -1,7 +1,17 @@
 <div class="container">
     <div class="row">
-        <div class="col-3 bg-info p2 text-white">
-            {{names.length}} Name
+        <div class="col-3 p2">
+
+            <button class="btn btn-block btn-outline-primary" (click)= 'changeName()'>
+                All publisher
+            </button>
+            <button  *ngFor ='let name of names'
+            class="btn btn-outline-primary btn-block"
+            [class.active] = 'name == selectedName' (click) = 'changeName(name)'>
+                {{name}}
+
+            </button>
+    
         </div>
         <div class="col-9 p-2">
             <div *ngFor = 'let survey of surveys' class="card m-1 p-1 bg-light">
