@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const mongoose = require('mongoose');
 
 const surveySchema = new mongoose.Schema({
@@ -51,18 +50,3 @@ surveySchema.methods.getSurveyResult = async () => {
 const Survey= mongoose.model('survey', surveySchema);
 
 module.exports = Survey;
-=======
-let mongoose = require('mongoose');
-
-//create a model class
-let surveyModel = mongoose.Schema({
-    name: String,
-    email: String,
-    published: String
-},
-{
-    collection: "surveys"
-});
-
-module.exports = mongoose.model('Survey', surveyModel);
->>>>>>> 988cbe5c29ec7e79d43625d08bcdc02768b001a5

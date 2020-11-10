@@ -18,20 +18,9 @@ let flash = require('connect-flash');
 // database setup
 require("./mongoose");
 
-// let DB = require('./db');
-
-// point Mongoose to the DB URI
-// mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
-
-// let mongoDB = mongoose.connection;
-// mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-// mongoDB.once('open', () => {
-//   console.log('Connected to MongoDB...');
-// });
-
 // routers
 let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
+// let usersRouter = require('../routes/users');
 
 // for relative paths
 const { setegid } = require('process');
@@ -52,7 +41,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // set the pages
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
