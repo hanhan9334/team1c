@@ -3,8 +3,18 @@
         <div class="col-3 bg-info p2">
             {{names.length}} Name
         </div>
-        <div class="col-9 bg-success p-2">
-            {{surveys.length}} Surveys
+        <div class="col-9 p-2">
+            <div *ngFor = 'let survey of surveys' class="card m-1p-1 bg-light">
+                <h4>
+                    {{survey.name}}
+                    <span class="badge badge-pill badge-primary float-right">
+                        {{survey.published}}
+                    </span>
+                </h4>
+                <div class="card-text bg-white p-1">
+                    {{survey.name}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
