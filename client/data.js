@@ -1,6 +1,6 @@
 module.exports = function(){
     return {
-        surveys: [
+        "surveys-list": [
             {
                 "id" : 1,
                 "name" : "test"

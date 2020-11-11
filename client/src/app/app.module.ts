@@ -4,26 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SurveyListModule } from './survey-list/survey-list.module';
-
-import { HeaderComponent } from './partials/header/header.component';
-import { FooterComponent } from './partials/footer/footer.component';
-import { BasePageComponent } from './partials/base-page/base-page.component';
-import { EditComponent } from './pages/edit/edit.component';
+import { PagesModule } from './pages/pages.module';
+import { PartialsModule } from './partials/partials.modules';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    BasePageComponent,
-    EditComponent,
-   
+    AppComponent,   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SurveyListModule
+    SurveyListModule,
+    PagesModule,
+    PartialsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
