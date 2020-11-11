@@ -7,4 +7,8 @@ export class Survey
         public published?: string
 
     ){}
+    public toString(): string
+    {
+        return 'Book --------------------- Name: ${this.name}';
+    }
 }

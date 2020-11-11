@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Survey } from './survey.model';
 import { StaticDataSource } from './static.datasource';
+import { RestDataSource } from './rest.datasource';
 
 @Injectable()
 export class SurveyRepository
@@ -8,9 +9,9 @@ export class SurveyRepository
     private surveys: Survey[] = [];
     private names: string[] = [];
 
-    constructor(private datasource: StaticDataSource)
+    constructor(private datasource: RestDataSource)
     {
-        datasource.getSurvey().subscribe(data => {
+        datasource.getSurveys().subscribe(data => {
             this.surveys = data;
             this.names= data.map(s => s.name)
                 .filter((n, index, array) => array.indexOf(n) === index).sort();
