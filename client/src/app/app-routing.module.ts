@@ -6,8 +6,9 @@ import { EditComponent } from './pages/edit/edit.component';
 const routes: Routes = [
 
   {path: 'survey-list', component: SurveyListComponent, data: {title: 'Survey List'}},
-  {path: '', redirectTo: '/survey-list', pathMatch: 'full', data: {title: 'Welcome'}},
-  {path: 'edit', component: EditComponent, pathMatch: 'full', data: {title: 'Add New Survey'}}
+  {path: '', redirectTo: '/survey-list', pathMatch: 'full', data: {title: 'Survey List'}},
+  {path: 'edit', component: EditComponent, pathMatch: 'full', data: {title: 'Add New Survey'}},
+  {path: '**', redirectTo: '/survey-list'}
 
 
 
