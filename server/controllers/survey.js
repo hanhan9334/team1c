@@ -17,10 +17,16 @@ module.exports.displaySurveyList = (req, res, next)=>{
         {
             //return console.log(ContactList);
             //pass throught the data
+            /*
             res.render('index', 
-            {title: 'Contact List', 
-            ContactList: contactList});
+            {title: 'Survey List', 
+            SurveyList: SurveyList});*/
+            res.json(surveyList);
         }
     // sorting the buisness contact list in alphabetical order
     }).collation({locale:'en',strength: 2}).sort({title:1});
+}
+
+module.exports.displayAddPage = (req, res, next)=>{
+    res.json({success: true, msg: 'Succesfully displayed Add page'});
 }
