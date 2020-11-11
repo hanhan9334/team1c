@@ -20,6 +20,7 @@ require("./mongoose");
 
 // routers
 let indexRouter = require('../routes/index');
+let surveyListRouter = require('../routes/survey_list');
 // let usersRouter = require('../routes/users');
 
 // for relative paths
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // set the pages
 app.use('/', indexRouter);
+app.use('/survey', surveyListRouter);
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
