@@ -14,6 +14,7 @@ let passport = require('passport');
 let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
 let flash = require('connect-flash');
+let cors = require('cors');
 
 // database setup
 require("./mongoose");
@@ -39,6 +40,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+app.use(cors());
 
 // set the pages
 app.use('/', indexRouter);

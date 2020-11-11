@@ -4,6 +4,6 @@ let mongoose = require('mongoose');
 
 let surveyController = require('../controllers/survey');
 
-router.get('/', surveyController.displaySurveyList);
+router.get('/', surveyController.displayAddPage);
 
 module.exports = router;

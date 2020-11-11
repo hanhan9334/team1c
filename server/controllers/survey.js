@@ -24,7 +24,7 @@ module.exports.displaySurveyList = (req, res, next)=>{
             res.json(surveyList);
         }
     // sorting the buisness contact list in alphabetical order
-    }).collation({locale:'en',strength: 2}).sort({title:1});
+    });
 }
 
 module.exports.displayAddPage = (req, res, next)=>{
