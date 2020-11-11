@@ -38,6 +38,11 @@ export class SurveyListComponent
     this.changePage(1);
   }
 
+  get pageCount(): number
+  {
+    return Math.ceil(this.repository.getSurveys(this.selectedName).length / this.surveyPerPage)
+  }
+  
   get pageNumbers(): number[]
   {
     return Array(Math.ceil(this.repository
