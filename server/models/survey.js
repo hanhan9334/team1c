@@ -7,39 +7,20 @@ const surveySchema = new mongoose.Schema({
         required: true
     },
     questions: [{
-        question: [{
+        question: {
             type: {
-                tpyeCode: {
-                    type: Int16Array,
-                    required: true
-                },
-                typeName: {
-                    type: String
-                }
+                type: String
             },
             questionBody: {
                 type: String,
                 required: true
             },
             anwsers: [{
-                anwser: [{
-                    num: {
-                        type: Int16Array,
-                        required: true
-                    },
-                    body: {
-                        type: String,
-                        required
-                    }
-                }]
-            }],
-            selections: [{
-                selection: {
-                    type: Int16Array,
-                    required: true
+                anwser: {
+                    type: String
                 }
             }]
-        }]
+        }
     }]
 })
 
@@ -47,6 +28,6 @@ surveySchema.methods.getSurveyResult = async () => {
 
 }
 
-const Survey= mongoose.model('survey', surveySchema);
+const Survey = mongoose.model('survey', surveySchema);
 
 module.exports = Survey;
