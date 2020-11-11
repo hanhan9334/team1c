@@ -8,6 +8,7 @@ import { SurveyListModule } from './survey-list/survey-list.module';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { BasePageComponent } from './partials/base-page/base-page.component';
     HeaderComponent,
     FooterComponent,
     BasePageComponent,
+    EditComponent,
    
   ],
   imports: [
