@@ -7,28 +7,28 @@ import { RestDataSource } from './rest.datasource';
 export class SurveyRepository
 {
     private surveys: Survey[] = [];
-    private names: string[] = [];
+    private titles: string[] = [];
 
     constructor(private datasource: RestDataSource)
     {
         datasource.getSurveys().subscribe(data => {
             this.surveys = data;
-            this.names= data.map(s => s.name)
+            this.titles= data.map(s => s.title)
                 .filter((n, index, array) => array.indexOf(n) === index).sort();
         });
     }
-    getSurveys(name: string = null): Survey[]
+    getSurveys(title: string = null): Survey[]
     {
         return this.surveys
-            .filter(s => name == null || name === s.name);
+            .filter(s => title == null || name === s.title);
     }
     getSurvey(id: number): Survey
     {
         return this.surveys.find(s => s._id === id);
     }
 
-    getNames(): string[]
+    getTitles(): string[]
     {
-        return this.names;
+        return this.titles;
     }
 }
