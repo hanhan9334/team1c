@@ -21,12 +21,12 @@ export class SurveyListComponent
     return this.repository.getSurveys(this.selectedTitle)
     .slice(pageIndex, pageIndex + this.surveyPerPage);
   }
-  get names(): string[]
+  get titles(): string[]
   {
     return this.repository.getTitles();
   }
-  changeName(newName?: string): void{
-    this.selectedTitle = newName;
+  changeTitle(newTitle?: string): void{
+    this.selectedTitle = newTitle;
   }
   changePage(newPage: number): void
   {
