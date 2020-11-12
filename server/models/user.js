@@ -28,8 +28,8 @@ const userSchema = new mongoose.Schema({
     },
     surveys:{
         type:Array,
-        items:{
-            type:String
+        surveyID:{
+            type:mongoose.Types.ObjectId
         }
     }
 })
