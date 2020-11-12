@@ -3,13 +3,13 @@
         <div class="col-3 p-2">
 
             <!-- publisher-->
-            <button class="btn btn-block btn-outline-primary" (click)= 'changeName()'>
-                All publisher
+            <button class="btn btn-block btn-outline-primary" (click)= 'changeTitle()'>
+                All title
             </button>
-            <button  *ngFor ='let name of names'
+            <button  *ngFor ='let title of titles'
             class="btn btn-outline-primary btn-block"
-            [class.active] = 'name == selectedName' (click) = 'changeName(name)'>
-                {{name}}
+            [class.active] = 'title == selectedTitle' (click) = 'changeTitle(title)'>
+                {{title}}
 
             </button>
     
@@ -25,12 +25,12 @@
             </div>
             <div *ngFor = 'let survey of surveys' class="card m-1 p-1 bg-light">
                 <h4>
-                    {{survey.name}}
+                    {{survey.title}}
                     <span class="badge badge-pill badge-primary float-right">
                         {{survey.published}}
                     </span>
                 </h4>
-                <div class="card-text bg-white p-1">{{survey.name}}</div>
+                <div class="card-text bg-white p-1">{{survey.title}}</div>
                     <a href="/edit" class="btn btn-success btn-sm float-right" role = "button">
                         <i class="fas fa-plus-circle"></i> Edit a new survey
                     </a>

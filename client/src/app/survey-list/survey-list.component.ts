@@ -8,7 +8,7 @@ import { SurveyRepository } from './../model/survey.repository';
 })
 export class SurveyListComponent 
 {
-  public selectedName = null;
+  public selectedTitle = null;
   public surveyPerPage = 4;
   public selectedPage = 1;
 
@@ -18,15 +18,15 @@ export class SurveyListComponent
   get surveys(): Survey[]
   {
     const pageIndex = (this.selectedPage -1) * this.surveyPerPage;
-    return this.repository.getSurveys(this.selectedName)
+    return this.repository.getSurveys(this.selectedTitle)
     .slice(pageIndex, pageIndex + this.surveyPerPage);
   }
-  get names(): string[]
+  get titles(): string[]
   {
-    return this.repository.getNames();
+    return this.repository.getTitles();
   }
-  changeName(newName?: string): void{
-    this.selectedName = newName;
+  changeTitle(newTitle?: string): void{
+    this.selectedTitle = newTitle;
   }
   changePage(newPage: number): void
   {
@@ -40,13 +40,13 @@ export class SurveyListComponent
 
   get pageCount(): number
   {
-    return Math.ceil(this.repository.getSurveys(this.selectedName).length / this.surveyPerPage)
+    return Math.ceil(this.repository.getSurveys(this.selectedTitle).length / this.surveyPerPage)
   }
   
   get pageNumbers(): number[]
   {
     return Array(Math.ceil(this.repository
-      .getSurveys(this.selectedName).length / this.surveyPerPage))
+      .getSurveys(this.selectedTitle).length / this.surveyPerPage))
       .fill(0).map((x, i) => i + 1);
   }
 }

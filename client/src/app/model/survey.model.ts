@@ -2,9 +2,8 @@ export class Survey
 {
     constructor(
         public _id?: number,
-        public name?: string,
-        public email?: string,
-        public published?: string
+        public title?: string,
+        public questions?: string[]
 
     ){}
     public toString(): string
