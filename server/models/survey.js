@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const surveySchema = new mongoose.Schema({
     userID: {
-        type: mongoose.Types.ObjectId
+        type: String
     },
     title: {
         type: String,

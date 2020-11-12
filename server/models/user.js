@@ -10,9 +10,9 @@ const userSchema = new mongoose.Schema({
         unique: true
 
     },
-    phoneNum:{
-        type:String,
-        required:[true,'Please enter a phone number']
+    phoneNum: {
+        type: String,
+        required: [true, 'Please enter a phone number']
     },
     email: {
         type: String,
@@ -26,10 +26,10 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please enter an password.'],
         minlength: [6, 'Minium password length is 6.']
     },
-    surveys:{
-        type:Array,
-        surveyID:{
-            type:mongoose.Types.ObjectId
+    surveys: {
+        type: Array,
+        surveyID: {
+            type: String
         }
     }
 })
