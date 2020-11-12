@@ -4,29 +4,62 @@ let mongoose = require('mongoose');
 
 let Survey = require('../models/survey');
 
+// api: display all survey list
 module.exports.displaySurveyList = (req, res, next)=>{
-
-
-    //check if there is an error
     Survey.find((err, surveyList) =>{
-        if(err)
-        {
+        if(err) {
             return console.error(err);
-        }
-        else
-        {
-            //return console.log(ContactList);
-            //pass throught the data
-            /*
-            res.render('index', 
-            {title: 'Survey List', 
-            SurveyList: SurveyList});*/
+        } else {
             res.json(surveyList);
         }
-    // sorting the buisness contact list in alphabetical order
     });
 }
 
-module.exports.displayAddPage = (req, res, next)=>{
-    res.json({success: true, msg: 'Succesfully displayed Add page'});
+// api: add new survey
+module.exports.createSurvey = (req, res, next)=>{
+    Survey.create(req.body, (err, newSurvey) =>{
+        if(err) {
+            return console.error(err);
+        } else {
+            res.json(newSurvey);
+        }
+    });
+}
+
+// api: display one survey
+module.exports.viewSurvey = (req, res, next)=>{
+    Survey.findById(req.params.id, (err, targetSurvey) => {
+        if(err) {
+            return console.error(err);
+        } else {
+            res.json(targetSurvey);
+        }
+    })
+}
+
+// api: update the edited survey
+module.exports.editSurvey = (req, res, next)=>{
+    Survey.findByIdAndUpdate(req.params.id,{
+        $set: req.body
+    }, (err, editedSurvey) => {
+        if (err) {
+            return console.log(err);
+        } else {
+            res.json(editedSurvey);
+            console.log('The edited survey updated successfully');
+        }
+    })
+}
+
+// api: delete a survey
+module.exports.deleteSurvey = (req, res, next)=>{
+    Survey.findOneAndRemove(req.params.id, (err, deletedSurvey) => {
+        if (err) {
+            return console.log(err);
+        } else {
+            res.status(200).json({
+                msg: deletedSurvey
+            })
+        }
+    })
 }

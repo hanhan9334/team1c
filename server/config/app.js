@@ -21,7 +21,7 @@ require("./mongoose");
 
 // routers
 let indexRouter = require('../routes/index');
-let surveyListRouter = require('../routes/survey_list');
+let surveyRouter = require('../routes/survey');
 // let usersRouter = require('../routes/users');
 
 // for relative paths
@@ -44,7 +44,7 @@ app.use(cors());
 
 // set the pages
 app.use('/', indexRouter);
-app.use('/survey', surveyListRouter);
+app.use('/survey', surveyRouter);
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
